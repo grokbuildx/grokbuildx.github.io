@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ccl</title>
-<meta name="description" content="ccl is a free, open-source command-line tool that connects the Grok Build and Codex coding assistants to the model provider of their choice. It can sync its own settings between your computers through Google Drive.">
+<title>gbx</title>
+<meta name="description" content="gbx is a free, open-source command-line tool that connects the Grok Build and Codex coding assistants to the model provider of their choice. It can sync its own settings between your computers through Google Drive.">
 <style>
   :root { color-scheme: light dark; --fg: #1f2328; --muted: #59636e; --bg: #ffffff; --link: #0969da; --box: #f6f8fa; --line: #d1d9e0; }
   @media (prefers-color-scheme: dark) { :root { --fg: #e6edf3; --muted: #9198a1; --bg: #0d1117; --link: #4493f8; --box: #151b23; --line: #3d444d; } }
@@ -28,41 +28,41 @@
 <main>
   <nav><a href="#about">About</a><a href="#google">Google data</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="#zh">中文</a></nav>
 
-  <h1>ccl</h1>
+  <h1>gbx</h1>
   <p class="tagline">A free, open-source command-line tool for software developers that connects the Grok Build and Codex coding assistants to the model provider of your choice.</p>
 
-  <p class="note">This is the official home page of the application <strong>ccl</strong>, the name shown on its Google sign-in screen. You do not need an account or a sign-in to read this page, download ccl or use it. Signing in with Google is optional and only turns on settings sync (see <a href="#google">below</a>).</p>
+  <p class="note">This is the official home page of the application <strong>gbx</strong>, the name shown on its Google sign-in screen. You do not need an account or a sign-in to read this page, download gbx or use it. Signing in with Google is optional and only turns on settings sync (see <a href="#google">below</a>).</p>
 
-  <h2 id="about">What ccl does</h2>
-  <p><a href="https://x.ai/cli">Grok Build</a> is a coding assistant that runs in a terminal and helps developers read, edit and test source code. ccl starts Grok Build for you, adds models to the Codex model picker, and connects them to the model service you choose:</p>
+  <h2 id="about">What gbx does</h2>
+  <p><a href="https://x.ai/cli">Grok Build</a> is a coding assistant that runs in a terminal and helps developers read, edit and test source code. gbx starts Grok Build for you, adds models to the Codex model picker, and connects them to the model service you choose:</p>
   <ul>
     <li>OpenAI-compatible APIs and gateways, with your own API key, by translating requests on your computer through a local proxy bound to <code>127.0.0.1</code>;</li>
     <li>coding subscriptions you already have, after you sign in to them.</li>
   </ul>
-  <p>ccl keeps several saved provider configurations, switches between them, and can run Grok Build sessions in your local browser with <code>ccl serve</code>.</p>
-  <p>ccl is a tool for writing software. It works only with text and source code. It does not create, edit or process images, video or audio.</p>
-  <p>ccl runs entirely on your own computer. Its developers run no servers, collect no data and have no user accounts. The full source code is public under the MIT License.</p>
+  <p>gbx keeps several saved provider configurations, switches between them, and can run Grok Build sessions in your local browser with <code>gbx serve</code>.</p>
+  <p>gbx is a tool for writing software. It works only with text and source code. It does not create, edit or process images, video or audio.</p>
+  <p>gbx runs entirely on your own computer. Its developers run no servers, collect no data and have no user accounts. The full source code is public under the MIT License.</p>
 
   <h2>Install</h2>
-<pre>npm install -g @claudecodelaunch/ccl   # needs Node.js 22 or later
-ccl set                               # add a model provider
-ccl                                   # start Grok Build with it</pre>
+<pre>npm install -g @grokbuildx/gbx   # needs Node.js 22 or later
+gbx set                               # add a model provider
+gbx                                   # start Grok Build with it</pre>
   <p>Downloads, documentation and release notes: <a href="https://github.com/grokbuildx/gbx">github.com/grokbuildx/gbx</a>.</p>
 
-  <h2 id="google">How ccl uses Google user data</h2>
-  <p>ccl uses Google for one optional feature: <strong>syncing ccl's own settings between your computers</strong>. When you run <code>ccl cloud login</code> and choose Google Drive, ccl opens Google's sign-in page in your browser and asks for one permission:</p>
+  <h2 id="google">How gbx uses Google user data</h2>
+  <p>gbx uses Google for one optional feature: <strong>syncing gbx's own settings between your computers</strong>. When you run <code>gbx cloud login</code> and choose Google Drive, gbx opens Google's sign-in page in your browser and asks for one permission:</p>
   <table>
-    <tr><th>Scope</th><th>Why ccl needs it</th></tr>
-    <tr><td><code>https://www.googleapis.com/auth/drive.appdata</code></td><td>To store one encrypted file, <code>ccl-sync.bundle</code>, in ccl's private application data folder in your Google Drive, and to read it back on your other computers.</td></tr>
+    <tr><th>Scope</th><th>Why gbx needs it</th></tr>
+    <tr><td><code>https://www.googleapis.com/auth/drive.appdata</code></td><td>To store one encrypted file, <code>gbx-sync.bundle</code>, in gbx's private application data folder in your Google Drive, and to read it back on your other computers.</td></tr>
   </table>
   <ul>
-    <li>The file contains only your ccl configuration (provider settings and tokens), encrypted with AES-256-GCM.</li>
-    <li>ccl cannot see, open or change any other file in your Drive, and does not request your name, email address or profile.</li>
-    <li>Google user data is not sent to the ccl developers, to any AI model or to anyone else. It is never used for advertising or to train AI or machine-learning models.</li>
-    <li>ccl does not use Google APIs to generate or process images, and never for AI-generated non-consensual intimate imagery (NCII) or any other sexual content.</li>
-    <li>Delete the synced data with <code>ccl cloud logout --delete-remote --yes</code>. Revoke access with <code>ccl cloud logout --revoke</code> or at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+    <li>The file contains only your gbx configuration (provider settings and tokens), encrypted with AES-256-GCM.</li>
+    <li>gbx cannot see, open or change any other file in your Drive, and does not request your name, email address or profile.</li>
+    <li>Google user data is not sent to the gbx developers, to any AI model or to anyone else. It is never used for advertising or to train AI or machine-learning models.</li>
+    <li>gbx does not use Google APIs to generate or process images, and never for AI-generated non-consensual intimate imagery (NCII) or any other sexual content.</li>
+    <li>Delete the synced data with <code>gbx cloud logout --delete-remote --yes</code>. Revoke access with <code>gbx cloud logout --revoke</code> or at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
   </ul>
-  <p>ccl's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Full details are in the <a href="privacy.html">Privacy Policy</a>.</p>
+  <p>gbx's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Full details are in the <a href="privacy.html">Privacy Policy</a>.</p>
 
   <h2>Links</h2>
   <ul>
@@ -73,10 +73,10 @@ ccl                                   # start Grok Build with it</pre>
   </ul>
 
   <h2 id="zh">中文</h2>
-  <p><strong>ccl</strong> 是一款免费、开源的开发者命令行工具，用来为编程助手 Grok Build 和 Codex 接入你选择的模型服务（OpenAI 兼容 API 与网关，或你已有的编程订阅）。ccl 只处理文本与源代码，不生成或处理图片、视频、音频。它完全在你的电脑上运行，开发者没有服务器、不收集数据，也没有账号体系。阅读本页、下载和使用 ccl 都不需要登录。</p>
-  <p>Google 登录是可选功能，只用于在你自己的多台电脑之间同步 ccl 配置。运行 <code>ccl cloud login</code> 时，ccl 只申请 <code>drive.appdata</code> 权限，在应用专属数据文件夹中保存一个 AES-256-GCM 加密文件 <code>ccl-sync.bundle</code>；它无法访问你 Drive 中的其他文件，也不读取姓名、邮箱。Google 用户数据不会发送给 ccl 开发者、任何 AI 模型或第三方，不用于广告或训练 AI 模型，也绝不用于生成图片或 AI 非自愿亲密影像（NCII）。详见<a href="privacy.html">隐私政策</a>与<a href="terms.html">服务条款</a>。</p>
+  <p><strong>gbx</strong> 是一款免费、开源的开发者命令行工具，用来为编程助手 Grok Build 和 Codex 接入你选择的模型服务（OpenAI 兼容 API 与网关，或你已有的编程订阅）。gbx 只处理文本与源代码，不生成或处理图片、视频、音频。它完全在你的电脑上运行，开发者没有服务器、不收集数据，也没有账号体系。阅读本页、下载和使用 gbx 都不需要登录。</p>
+  <p>Google 登录是可选功能，只用于在你自己的多台电脑之间同步 gbx 配置。运行 <code>gbx cloud login</code> 时，gbx 只申请 <code>drive.appdata</code> 权限，在应用专属数据文件夹中保存一个 AES-256-GCM 加密文件 <code>gbx-sync.bundle</code>；它无法访问你 Drive 中的其他文件，也不读取姓名、邮箱。Google 用户数据不会发送给 gbx 开发者、任何 AI 模型或第三方，不用于广告或训练 AI 模型，也绝不用于生成图片或 AI 非自愿亲密影像（NCII）。详见<a href="privacy.html">隐私政策</a>与<a href="terms.html">服务条款</a>。</p>
 
-  <footer>ccl is independent open-source software and is not affiliated with xAI, OpenAI or Google. · MIT License · <a href="https://github.com/grokbuildx/gbx/issues">Contact</a></footer>
+  <footer>gbx is independent open-source software and is not affiliated with xAI, OpenAI or Google. · MIT License · <a href="https://github.com/grokbuildx/gbx/issues">Contact</a></footer>
 </main>
 </body>
 </html>
